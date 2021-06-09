@@ -1,5 +1,9 @@
 # React Study
 
+### [Movie App](./movie)
+
+> Normad Coders React 2019 강의 Movie App 예제
+
 ### [Posts](./posts)
 
 > React 컴포넌트 구성, AJAX 비동기 작업 처리, CSS 애니메이션 처리 예제
@@ -24,3 +28,4 @@
 
 - [VELOPERT.LOG](https://velopert.com/)
 - [생활코딩](https://opentutorials.org/course/1)
+- [Normad Coders](https://www.youtube.com/channel/UCUpJs89fSBXNolQGOYKn0YQ)
