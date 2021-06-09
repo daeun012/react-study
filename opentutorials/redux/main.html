@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+    <div id="subject"></div>
+    <div id="toc"></div>
+    <div id="control"></div>
+    <div id="article"></div>
+    <script>
+      function reducer(state, action) {
+        if (state === undefined) {
+          return {
+            max_id: 2,
+            mode: 'welcome',
+            selected_id: null,
+            contents: [
+              { id: 1, title: 'HTML', desc: 'HTML is...' },
+              { id: 2, title: 'CSS', desc: 'CSS is...' },
+            ],
+          };
+        }
+        let newState;
+        if (action.type === 'CHANGE_MODE') {
+          newState = Object.assign({}, state, { mode: action.mode });
+        } else if (action.type === 'SELECT') {
+          newState = Object.assign({}, state, { selected_id: action.id, mode: action.mode });
+        } else if (action.type === 'CREATE') {
+          let newMaxId = state.max_id + 1;
+          let newContents = state.contents.concat();
+          newContents.push({ id: newMaxId, title: action.title, desc: action.desc });
+          newState = Object.assign({}, state, { max_id: newMaxId, selected_id: newMaxId, contents: newContents, mode: 'read' });
+        } else if (action.type === 'DELETE') {
+          let newContents = [];
+          let i = 0;
+          while (i < state.contents.length) {
+            if (state.selected_id !== state.contents[i].id) {
+              newContents.push(state.contents[i]);
+            }
+            i = i + 1;
+          }
+          newState = Object.assign({}, state, {
+            contents: newContents,
+            mode: 'welcome',
+          });
+        }
+        return newState;
+      }
+      let store = Redux.createStore(reducer);
+      store.subscribe(article);
+      store.subscribe(TOC);
+      subject();
+      TOC();
+      control();
+      article();
+    </script>
+  </body>
+</html>
