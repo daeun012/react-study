@@ -24,7 +24,9 @@
 
 > 생활코딩 React, Redux, React-Redux 강의 예제 모음
 
-### ○ 참고문서
+---
+
+### 참고문서
 
 - [VELOPERT.LOG](https://velopert.com/)
 - [생활코딩](https://opentutorials.org/course/1)
