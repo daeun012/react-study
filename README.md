@@ -22,7 +22,7 @@
 
 ### [Opentutorials](./opentutorials)
 
-> 생활코딩 React, Redux, React-Redux 강의 예제 모음
+> 생활코딩 React, Redux, React-Redux, React-Hook 강의 예제 모음
 
 ---
 
